@@ -74,7 +74,7 @@ if (MODE === "CLUSTER" && cluster.isPrimary) {
   app.use(
     session({
       store: MongoStore.create({
-        mongoUrl: process.env.MONGO_ATLAS,
+        mongoUrl: 'mongodb+srv://latradicion:vtucumaN751@cluster0.ihsqo7w.mongodb.net/test',
         mongoOptions: {
           useNewUrlParser: true,
           useUnifiedTopology: true,
