@@ -6,7 +6,7 @@ socket.on("products", function (data) {
 });
 
 function renderProductList(data) {
-  fetch(`http://localhost:8080/productList.hbs`)
+  fetch(`https://deployrailway.up.railway.app/productList.hbs`)
     .then((res) => res.text())
     .then((res) => {
       const template = Handlebars.compile(res);
