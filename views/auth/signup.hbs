@@ -1,0 +1,81 @@
+{{!-- <div class="row">
+  <div class="col-md-4 mx-auto">
+    <div class="card bg-black text-white">
+      <div class="card-header pt-5">
+        <h4 class="text-center">
+          Registro de Usuario
+        </h4>
+      </div>
+      <div class="card-body">
+        <form action="/auth/signup" method="POST">
+          <div class="mb-3">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              class="form-control bg-dark text-white"
+              name="email"
+              placeholder="Email"
+              value="{{email}}"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              class="form-control bg-dark text-white"
+              name="password"
+              placeholder="Password"
+              value="{{password}}"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="confirm_password">Cofirm Password:</label>
+            <input
+              type="password"
+              class="form-control bg-dark text-white"
+              name="confirm_password"
+              placeholder="Confirm Password"
+              value="{{confirm_password}}"
+            />
+          </div>
+          <button class="btn btn-success btn-block">
+            Signup
+          </button>
+        </form>
+      </div>
+      <p class="text-center">¿Ya tienes una cuenta?
+        <a href="/auth/signin" class="text-info">Login</a></p>
+    </div>
+  </div>
+</div> --}}
+
+  <div class="container my-5">
+    <div class="jumbotron">
+      <h1>REGISTER</h1>
+      <br>
+      <form action="/auth/signup" method="POST" id="formRegister" class="form" role="form">
+
+        <div class="form-group">
+          <input id="email" name='email' placeholder="email" class="form-control" type="text" required>
+        </div>
+
+        <div class="form-group">
+          <input id="password" name='password' placeholder="password" class="form-control" type="password" required>
+        </div>
+
+        <div class="form-group">
+
+          <button class="btn btn-success my-3">
+            Register
+          </button>
+
+        </div>
+      </form>
+
+      <hr>
+      <div class="text-left">
+        <button class="btn btn-success my-3" onclick="location.href = '/auth/login'">Ir a Login</button>
+      </div>
+
+    </div>
+  </div>

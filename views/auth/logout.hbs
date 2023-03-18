@@ -1,0 +1,24 @@
+<div class="jumbotron">
+  <form>
+    <div class="form-group">
+      <h1
+        id="message"
+        class="card-title d-flex justify-content-between align-items-center"
+      >
+        HASTA LUEGO
+        {{{user.email}}}
+      </h1>
+    </div>
+  </form>
+</div>
+<script>
+  console.log("iniciar script")
+  setTimeout(() => {
+     console.log("redireccionamiento")
+    window.location.href = "/";
+  }, 120000)
+ console.log("terminar script")
+</script>
+
+
+
