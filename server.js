@@ -20,10 +20,11 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const minimist = require('minimist')
 const cluster = require("cluster")
-const os = require('os')  
+const os = require('os')
 const logger = require("./logger.js")
 const loggerConsola = logger.getLogger("default");
 const loggerArchivoWarn = logger.getLogger("archivowarn");
+const cors = require("cors")
 
 const { PORT, MODE } = minimist(process.argv.slice(2), {
   alias: {
@@ -37,7 +38,7 @@ const { PORT, MODE } = minimist(process.argv.slice(2), {
   }
 })
 
-if (MODE === "CLUSTER" && cluster.isPrimary) {  
+if (MODE === "CLUSTER" && cluster.isPrimary) {
   const numCPUs = os.cpus().length
   console.log(`Numero de procesadores ${numCPUs}`)
   console.log(`PID Master: ${process.pid}`)
@@ -88,6 +89,7 @@ if (MODE === "CLUSTER" && cluster.isPrimary) {
   );
   app.use(passport.initialize());
   app.use(passport.session());
+  app.use(cors())
 
   // static files
   app.use(express.static(join(__dirname, "public")));
