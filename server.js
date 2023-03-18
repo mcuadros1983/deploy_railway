@@ -89,7 +89,7 @@ if (MODE === "CLUSTER" && cluster.isPrimary) {
   );
   app.use(passport.initialize());
   app.use(passport.session());
-  app.use(cors())
+  app.use(cors({origin:true}))
 
   // static files
   app.use(express.static(join(__dirname, "public")));
